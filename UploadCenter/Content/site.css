@@ -1,0 +1,139 @@
+﻿body {
+}
+
+input[type=file].form-control {
+	height: auto;
+}
+
+h1.panel-heading {
+	margin-top: 0px;
+	font-size: 16px;
+	line-height: normal;
+}
+.dropdown-menu > li > .menu-item {
+	clear: both;
+	color: #333333;
+	display: block;
+	font-weight: normal;
+	line-height: 1.42857;
+	padding: 3px 20px;
+	white-space: nowrap;
+}
+
+.icon {
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: inline-block;
+	*display: block;
+}
+
+	.icon.file {
+		background-image: url('images/icon/file-unknown.png');
+		width: 64px;
+		height: 64px;
+	}
+
+		.icon.file.exe,
+		.icon.file.scr,
+		.icon.file.cmd,
+		.icon.file.bat,
+		.icon.file.sh {
+			background-image: url('images/icon/file-cmd.png');
+		}
+
+		.icon.file.pcast,
+		.icon.file.m4p,
+		.icon.file.m4a,
+		.icon.file.flac,
+		.icon.file.mp3,
+		.icon.file.wav,
+		.icon.file.aif,
+		.icon.file.oga,
+		.icon.file.ogg,
+		.icon.file.wma {
+			background-image: url('images/icon/file-music.png');
+		}
+
+		.icon.file.flc,
+		.icon.file.bsf,
+		.icon.file.qt,
+		.icon.file.flv,
+		.icon.file.divx,
+		.icon.file.m4v,
+		.icon.file.mp4,
+		.icon.file.mov,
+		.icon.file.avi,
+		.icon.file.mpg,
+		.icon.file.ogv,
+		.icon.file.wmv,
+		.icon.file.webm,
+		.icon.file.threegp,
+		.icon.file.mkv {
+			background-image: url('images/icon/file-movie.png');
+		}
+
+		.icon.file.jpeg,
+		.icon.file.jpg,
+		.icon.file.png,
+		.icon.file.tif,
+		.icon.file.psd,
+		.icon.file.webp,
+		.icon.file.ico,
+		.icon.file.icns,
+		.icon.file.cur,
+		.icon.file.gif {
+			background-image: url('images/icon/file-picture.png');
+		}
+
+		.icon.file.rtf,
+		.icon.file.log,
+		.icon.file.doc,
+		.icon.file.docx,
+		.icon.file.txt {
+			background-image: url('images/icon/file-text.png');
+		}
+
+		.icon.file.html,
+		.icon.file.htm,
+		.icon.file.cshtml,
+		.icon.file.vbhtml,
+		.icon.file.php,
+		.icon.file.asp,
+		.icon.file.aspx,
+		.icon.file.ascx,
+		.icon.file.config {
+			background-image: url('images/icon/file-html.png');
+		}
+
+		.icon.file.js,
+		.icon.file.json,
+		.icon.file.cs,
+		.icon.file.vb,
+		.icon.file.pas,
+		.icon.file.h,
+		.icon.file.cpp,
+		.icon.file.c,
+		.icon.file.cc,
+		.icon.file.xml {
+			background-image: url('images/icon/file-script.png');
+		}
+
+		.icon.file.sevenz,
+		.icon.file.ace,
+		.icon.file.tar,
+		.icon.file.taz,
+		.icon.file.iso,
+		.icon.file.isz,
+		.icon.file.img,
+		.icon.file.jar,
+		.icon.file.gz,
+		.icon.file.tgz,
+		.icon.file.z,
+		.icon.file.rar,
+		.icon.file.zip {
+			background-image: url('images/icon/file-archive.png');
+		}
+
+.footer-invisible-link {
+	color: #555555;
+}

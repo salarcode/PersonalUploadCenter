@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UploadCenter.Site" %>
+<%@ Import Namespace="System.Web.Optimization" %>
+<%@ Import Namespace="UploadCenter.Classes" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title></title>
+<%:Styles.Render("~/content/css") %>
+<%:Styles.Render("~/content/boot/css") %>
+<%:Scripts.Render("~/bundles/lib") %>
+<asp:ContentPlaceHolder ID="plhHead" runat="server">
+</asp:ContentPlaceHolder>
+<meta name="description" content="Upload Center is a place to upload and share your files either from your PC or a remote URL. Brought to you by Salar Khalilzadeh" />
+</head>
+<body>
+<br />
+<div class="container">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<a class="navbar-brand" href="/">
+		<img src="/Content/images/logo24.png" alt="Upload Center Logo" />
+		Upload Center
+	</a>
+</div>
+<div class="collapse navbar-collapse" id="main-navbar-collapse-1">
+	<ul class="nav navbar-nav">
+		<li id="menu-from-pc"><a href="/frompc.aspx">Upload from PC</a></li>
+		<li id="menu-from-remote"><a href="/remote.aspx">Upload from Remote Url</a></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Members <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<% if (UserManager.SignedIn()){ %>
+				<li><span class="menu-item">Welcome, <%:UserManager.GetUsername() %></span></li>
+				<%if(UserManager.UserIsAdmin()){ %><li><a href="/account/users.aspx">View Users</a></li><%} %>
+				<li><a href="/account/">My Files</a></li>
+				<li class="divider"></li>
+				<li><a href="/account/signout.ashx">Sign out</a></li>
+				<% }else{ %>
+				<li><a href="/account/login.aspx">Login</a></li>
+				<li><a href="/account/register.aspx">Register</a></li>
+				<% } %>
+			</ul>
+		</li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li>
+		<form action="/search.aspx" class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<input type="text" name="q" class="form-control" placeholder="Search" value="<%:Request.QueryString["q"] %>" />
+			</div>
+		</form>
+		</li>
+	</ul>
+</div>
+</div>
+</nav>
+<form id="frmSite" runat="server">
+<asp:ContentPlaceHolder ID="plhBody" runat="server">
+</asp:ContentPlaceHolder>
+</form>
+<footer class="panel-footer text-center">
+<span><small>Upload Center brought to you by <a class="footer-invisible-link" href="http://blog.salarcode.com/">Salar Khalilzadeh</a> • <a href="http://www.salarcode.com/" title="Salar Khalilzadeh Personnal Page">salarcode.com</a> &copy; 2014</small></span>
+</footer>
+</div>
+<%:Scripts.Render("~/bundles/legacy") %>
+</body>
+</html>
