@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account\Config.aspx" />
     <Content Include="Account\Default.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
@@ -185,6 +186,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Config.aspx.cs">
+      <DependentUpon>Config.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Config.aspx.designer.cs">
+      <DependentUpon>Config.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,6 +227,7 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Classes\Config.cs" />
     <Compile Include="Classes\Downloader\DownloadDataInfo.cs" />
     <Compile Include="Classes\Downloader\DownloadProcess.cs" />
     <Compile Include="Classes\Downloader\HeadersParser.cs" />

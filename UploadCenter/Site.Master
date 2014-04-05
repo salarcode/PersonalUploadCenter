@@ -40,7 +40,11 @@
 			<ul class="dropdown-menu">
 				<% if (UserManager.SignedIn()){ %>
 				<li><span class="menu-item">Welcome, <%:UserManager.GetUsername() %></span></li>
-				<%if(UserManager.UserIsAdmin()){ %><li><a href="/account/users.aspx">View Users</a></li><%} %>
+				<% if (UserManager.UserIsAdmin()){%>
+				<li><a href="/account/config.aspx">Configuration</a></li>
+				<li><a href="/account/users.aspx">View Users</a></li>
+				<li class="divider"></li>
+				<% } %>
 				<li><a href="/account/">My Files</a></li>
 				<li class="divider"></li>
 				<li><a href="/account/signout.ashx">Sign out</a></li>

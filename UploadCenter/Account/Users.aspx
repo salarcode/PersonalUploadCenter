@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="plhBody" runat="server">
 	<script>
-		$('#menu-register').addClass('active');
+		$('#menu-users').addClass('active');
 	</script>
 	<div class="panel panel-primary">
 		<div class="panel-heading">

@@ -121,13 +121,13 @@ namespace UploadCenter
 					}
 
 					// user ID, or IP or anything you use to identify the user
-					var userIP = context.Request.UserHostAddress;
+					//var userIP = context.Request.UserHostAddress;
 
-					// limiting the download speed manager and the speed limit
-					UserSpeedLimitManager.StartNewDownload(downloadInfo, userIP, DownloadLimit);
+					// Option 1: limiting the download speed for this file for this user!
+					//UserSpeedLimitManager.StartNewDownload(downloadInfo, userIP, DownloadLimit);
 
-					// limiting the download speed manager and the speed limit
-					//downloadInfo.LimitTransferSpeed(DownloadLimit);
+					// Option 2: Limiting only this connection
+					downloadInfo.LimitTransferSpeed(DownloadLimit);
 
 					// It is very important to destory the DownloadProcess object
 					// Here the using block does it for us.
