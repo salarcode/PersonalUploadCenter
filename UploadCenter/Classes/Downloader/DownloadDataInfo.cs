@@ -16,6 +16,12 @@ namespace Salar.ResumableDownload
 	{
 		public const string MimeStreamData = "application/octet-stream";
 		private bool _streamCreated = false;
+
+		/// <summary>
+		/// The not throttled stream
+		/// </summary>
+		private Stream _originalStream = null;
+
 		public DownloadDataInfo(string fileName)
 		{
 			DataId = Guid.NewGuid();
@@ -29,6 +35,7 @@ namespace Salar.ResumableDownload
 
 			_streamCreated = true;
 			DataStream = File.OpenRead(fileName);
+			_originalStream = DataStream;
 			ApplyRangeToStream = true;
 
 			RequestHttpMethod = "GET";
@@ -53,6 +60,7 @@ namespace Salar.ResumableDownload
 
 			_streamCreated = false;
 			DataStream = dataStream;
+			_originalStream = DataStream;
 			ApplyRangeToStream = true;
 
 			RequestHttpMethod = "GET";
@@ -74,6 +82,7 @@ namespace Salar.ResumableDownload
 
 			_streamCreated = true;
 			DataStream = new MemoryStream(dataBytes);
+			_originalStream = DataStream;
 			ApplyRangeToStream = true;
 
 			RequestHttpMethod = "GET";
@@ -92,6 +101,12 @@ namespace Salar.ResumableDownload
 				DataStream.Dispose();
 			}
 			DataStream = null;
+			if (_streamCreated && _originalStream != null)
+			{
+				_originalStream.Dispose();
+			}
+			_originalStream = null;
+
 
 			// raise the events!
 			OnDisposed();
@@ -187,6 +202,8 @@ namespace Salar.ResumableDownload
 		/// The data
 		/// </summary>
 		public Stream DataStream { get; private set; }
+
+		
 
 		/// <summary>
 		/// If true and if RangeRequest is true the specifed range values will apply to DataStream,
