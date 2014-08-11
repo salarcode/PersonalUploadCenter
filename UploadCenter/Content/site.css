@@ -33,104 +33,104 @@ h1.panel-heading {
 		height: 64px;
 	}
 
-		.icon.file.exe,
-		.icon.file.scr,
-		.icon.file.cmd,
-		.icon.file.bat,
-		.icon.file.sh {
+		.icon.file.ext-exe,
+		.icon.file.ext-scr,
+		.icon.file.ext-cmd,
+		.icon.file.ext-bat,
+		.icon.file.ext-sh {
 			background-image: url('images/icon/file-cmd.png');
 		}
 
-		.icon.file.pcast,
-		.icon.file.m4p,
-		.icon.file.m4a,
-		.icon.file.flac,
-		.icon.file.mp3,
-		.icon.file.wav,
-		.icon.file.aif,
-		.icon.file.oga,
-		.icon.file.ogg,
-		.icon.file.wma {
+		.icon.file.ext-pcast,
+		.icon.file.ext-m4p,
+		.icon.file.ext-m4a,
+		.icon.file.ext-flac,
+		.icon.file.ext-mp3,
+		.icon.file.ext-wav,
+		.icon.file.ext-aif,
+		.icon.file.ext-oga,
+		.icon.file.ext-ogg,
+		.icon.file.ext-wma {
 			background-image: url('images/icon/file-music.png');
 		}
 
-		.icon.file.flc,
-		.icon.file.bsf,
-		.icon.file.qt,
-		.icon.file.flv,
-		.icon.file.divx,
-		.icon.file.m4v,
-		.icon.file.mp4,
-		.icon.file.mov,
-		.icon.file.avi,
-		.icon.file.mpg,
-		.icon.file.ogv,
-		.icon.file.wmv,
-		.icon.file.webm,
-		.icon.file.threegp,
-		.icon.file.mkv {
+		.icon.file.ext-flc,
+		.icon.file.ext-bsf,
+		.icon.file.ext-qt,
+		.icon.file.ext-flv,
+		.icon.file.ext-divx,
+		.icon.file.ext-m4v,
+		.icon.file.ext-mp4,
+		.icon.file.ext-mov,
+		.icon.file.ext-avi,
+		.icon.file.ext-mpg,
+		.icon.file.ext-ogv,
+		.icon.file.ext-wmv,
+		.icon.file.ext-webm,
+		.icon.file.ext-3gp,
+		.icon.file.ext-mkv {
 			background-image: url('images/icon/file-movie.png');
 		}
 
-		.icon.file.jpeg,
-		.icon.file.jpg,
-		.icon.file.png,
-		.icon.file.tif,
-		.icon.file.psd,
-		.icon.file.webp,
-		.icon.file.ico,
-		.icon.file.icns,
-		.icon.file.cur,
-		.icon.file.gif {
+		.icon.file.ext-jpeg,
+		.icon.file.ext-jpg,
+		.icon.file.ext-png,
+		.icon.file.ext-tif,
+		.icon.file.ext-psd,
+		.icon.file.ext-webp,
+		.icon.file.ext-ico,
+		.icon.file.ext-icns,
+		.icon.file.ext-cur,
+		.icon.file.ext-gif {
 			background-image: url('images/icon/file-picture.png');
 		}
 
-		.icon.file.rtf,
-		.icon.file.log,
-		.icon.file.doc,
-		.icon.file.docx,
-		.icon.file.txt {
+		.icon.file.ext-rtf,
+		.icon.file.ext-log,
+		.icon.file.ext-doc,
+		.icon.file.ext-docx,
+		.icon.file.ext-txt {
 			background-image: url('images/icon/file-text.png');
 		}
 
-		.icon.file.html,
-		.icon.file.htm,
-		.icon.file.cshtml,
-		.icon.file.vbhtml,
-		.icon.file.php,
-		.icon.file.asp,
-		.icon.file.aspx,
-		.icon.file.ascx,
-		.icon.file.config {
+		.icon.file.ext-html,
+		.icon.file.ext-htm,
+		.icon.file.ext-cshtml,
+		.icon.file.ext-vbhtml,
+		.icon.file.ext-php,
+		.icon.file.ext-asp,
+		.icon.file.ext-aspx,
+		.icon.file.ext-ascx,
+		.icon.file.ext-config {
 			background-image: url('images/icon/file-html.png');
 		}
 
-		.icon.file.js,
-		.icon.file.json,
-		.icon.file.cs,
-		.icon.file.vb,
-		.icon.file.pas,
-		.icon.file.h,
-		.icon.file.cpp,
-		.icon.file.c,
-		.icon.file.cc,
-		.icon.file.xml {
+		.icon.file.ext-js,
+		.icon.file.ext-json,
+		.icon.file.ext-cs,
+		.icon.file.ext-vb,
+		.icon.file.ext-pas,
+		.icon.file.ext-h,
+		.icon.file.ext-cpp,
+		.icon.file.ext-c,
+		.icon.file.ext-cc,
+		.icon.file.ext-xml {
 			background-image: url('images/icon/file-script.png');
 		}
 
-		.icon.file.sevenz,
-		.icon.file.ace,
-		.icon.file.tar,
-		.icon.file.taz,
-		.icon.file.iso,
-		.icon.file.isz,
-		.icon.file.img,
-		.icon.file.jar,
-		.icon.file.gz,
-		.icon.file.tgz,
-		.icon.file.z,
-		.icon.file.rar,
-		.icon.file.zip {
+		.icon.file.ext-7z,
+		.icon.file.ext-ace,
+		.icon.file.ext-tar,
+		.icon.file.ext-taz,
+		.icon.file.ext-iso,
+		.icon.file.ext-isz,
+		.icon.file.ext-img,
+		.icon.file.ext-jar,
+		.icon.file.ext-gz,
+		.icon.file.ext-tgz,
+		.icon.file.ext-z,
+		.icon.file.ext-rar,
+		.icon.file.ext-zip {
 			background-image: url('images/icon/file-archive.png');
 		}
 

@@ -146,7 +146,7 @@ namespace UploadCenter
 						}
 
 						// checking the state of the download
-						if (state == DownloadProcess.DownloadProcessState.PartFinished)
+						if (state == DownloadProcess.DownloadProcessState.LastPartfinished)
 						{
 							// all parts of download are finish, do something here!
 							using (var db = new UploadDb())
