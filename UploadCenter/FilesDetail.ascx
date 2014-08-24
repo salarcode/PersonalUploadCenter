@@ -7,11 +7,17 @@
 <script>
 	filesDetail = {
 		writeDateTime: function (dt) {
-			if (dt == '') return;
+			if (dt == '') {
+				document.write('none');
+				return;
+			}
 			document.write(moment(dt).format('YYYY/MM/DD HH:mm:ss'));
 		},
 		updateDateTime: function (dt, elm) {
-			if (dt == '') return;
+			if (dt == '') {
+				$(elm).text('none');
+				return;
+			}
 			$(elm).text(moment(dt).format('YYYY/MM/DD HH:mm:ss'));
 		}
 	};
@@ -41,39 +47,42 @@
 				<div class="alert alert-success">
 					<strong><a rel="nofollow" href="/download.ashx?id=<%#((UploadedFile)Container.DataItem).UploadedFileID %>"><i class="glyphicon glyphicon-circle-arrow-down"></i><%#((UploadedFile)Container.DataItem).Filename %></a></strong>
 				</div>
-				<div>
-					<span class="col-sm-2">Size:</span>
-					<span class="label label-default"><%#((UploadedFile)Container.DataItem).FileSizeName %></span>
-				</div>
-				<div>
-					<span class="col-sm-2">Downloaded:</span>
-					<span class="label label-default"><%#((UploadedFile)Container.DataItem).Downloaded %></span>
-				</div>
-				<div>
-					<span class="col-sm-2">Uploaded:</span>
-					<span class="label label-default">
-						<script type="text/javascript">
-							filesDetail.writeDateTime('<%#((UploadedFile)Container.DataItem).UploadDate.ToString("R") %>');
-						</script>
-					</span>
-				</div>
-				<div>
-					<span class="col-sm-2">Last Download:</span>
-					<span class="label label-default" id="LastDownload">
-						<script type="text/javascript">filesDetail.writeDateTime('<%#(((UploadedFile)Container.DataItem).LastDownload==null?"":((UploadedFile)Container.DataItem).LastDownload.Value.ToString("R")) %>');</script>
-					</span>
-				</div>
-				<div>
-					<span class="col-sm-2">Uploader:</span>
-					<span class="label label-default"><%#((UploadedFile)Container.DataItem).UploaderUsername %></span>&nbsp;
-				</div>
-				<div runat="server" visible='<%# ((UploadedFile)Container.DataItem).VisitorIsOwner %>'>
-					<span class="col-sm-2">Access:</span>
-					<span class="label label-default"><%#((UploadedFile)Container.DataItem).IsPublic?"Public":"Private" %></span>&nbsp;
-				</div>
-				<div>
-					<span class="col-sm-2">Comment:</span>
-					<span class=""><%#((UploadedFile)Container.DataItem).Comment %></span>&nbsp;
+				<div class="row">
+
+					<div class="col-sm-12">
+						<span class="col-sm-2">Size:</span>
+						<span class="label label-default"><%#((UploadedFile)Container.DataItem).FileSizeName %></span>
+					</div>
+					<div class="col-sm-12">
+						<span class="col-sm-2">Downloaded:</span>
+						<span class="label label-default"><%#((UploadedFile)Container.DataItem).Downloaded %></span>
+					</div>
+					<div class="col-sm-12">
+						<span class="col-sm-2">Uploaded:</span>
+						<span class="label label-default">
+							<script type="text/javascript">
+								filesDetail.writeDateTime('<%#((UploadedFile)Container.DataItem).UploadDate.ToString("R") %>');
+							</script>
+						</span>
+					</div>
+					<div class="col-sm-12">
+						<span class="col-sm-2">Last Download:</span>
+						<span class="label label-default" id="LastDownload">
+							<script type="text/javascript">filesDetail.writeDateTime('<%#(((UploadedFile)Container.DataItem).LastDownload==null?"":((UploadedFile)Container.DataItem).LastDownload.Value.ToString("R")) %>');</script>
+						</span>
+					</div>
+					<div class="col-sm-12">
+						<span class="col-sm-2">Uploader:</span>
+						<span class="label label-default"><%#((UploadedFile)Container.DataItem).UploaderUsername %></span>&nbsp;
+					</div>
+					<div class="col-sm-12" runat="server" visible='<%# ((UploadedFile)Container.DataItem).VisitorIsOwner %>'>
+						<span class="col-sm-2">Access:</span>
+						<span class="label label-default"><%#((UploadedFile)Container.DataItem).IsPublic?"Public":"Private" %></span>&nbsp;
+					</div>
+					<div class="col-sm-12">
+						<span class="col-sm-2">Comment:</span>
+						<span class=""><%#((UploadedFile)Container.DataItem).Comment %></span>&nbsp;
+					</div>
 				</div>
 			</div>
 		</div>

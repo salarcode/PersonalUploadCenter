@@ -438,7 +438,7 @@ namespace Salar.ResumableDownload
 			// if this part finished notify the data info
 			if (processState == DownloadProcessState.PartFinished)
 			{
-				if (rangesBegin.Length > 0 && rangesBegin.GetUpperBound(0) == _dataInfo.ContentLength)
+				if (rangesEnd.Length > 0 && rangesEnd[0] == _dataInfo.ContentLength - 1)
 				{
 					processState = DownloadProcessState.LastPartfinished;
 				}
