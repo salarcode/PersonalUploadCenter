@@ -143,6 +143,7 @@
     <Content Include="Download.ashx" />
     <Content Include="Account\Signout.ashx" />
     <Content Include="App_Data\placeholder" />
+    <Content Include="Files\placeholder" />
     <None Include="Properties\PublishProfiles\PublishRelease.pubxml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />

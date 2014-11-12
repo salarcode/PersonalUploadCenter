@@ -11,10 +11,12 @@
 	<style>
 		.cookie-bar-default {
 		}
+		.text-left-forced {
+			text-align: left !important;
+		}
 	</style>
 	<div class="panel panel-primary">
-		<h1 class="panel-heading">
-			Upload from remote url
+		<h1 class="panel-heading">Upload from remote url
 		</h1>
 		<div class="panel-body form-horizontal" role="form">
 			<div id="vldErrorsBox" class="alert alert-danger fade in" runat="server" visible="False" enableviewstate="False">
@@ -46,7 +48,8 @@
 				</div>
 			</div>
 			<asp:HiddenField ID="txtVisibility" runat="server" Value="1" />
-			<% if (UserManager.SignedIn()){ %>
+			<% if (UserManager.SignedIn())
+	  { %>
 			<div class="form-group">
 				<label class="col-sm-2">Visible to:</label>
 				<div class="col-sm-10">
@@ -94,6 +97,16 @@
 						</div>
 						<div id="advancedOptions" class="panel-collapse collapse in-no">
 							<div class="panel-body">
+								<div class="form-group row">
+									<div class="form-horizontal">
+										<div class="col-sm-12">
+											<label class="col-sm-2 control-label text-left-forced">Referrer:</label>
+											<div class="col-sm-10">
+												<asp:TextBox ID="txtReferrer" Columns="40" runat="server" ValidationGroup="Remote" CssClass="form-control"></asp:TextBox>
+											</div>
+										</div>
+									</div>
+								</div>
 								<fieldset>
 									<legend>Cookies
 										<button type="button" class="btn btn-default" onclick="page.addCookieBar()">Add New</button>
@@ -135,7 +148,7 @@
 				<label class="col-sm-2"></label>
 				<div class="col-sm-10">
 					<asp:HiddenField ID="txtCookies" runat="server" />
-					<button id="btnRemoteUpload" ValidationGroup="Remote" runat="server" onclick="page.buildTheCookies();" class="btn btn-primary " onserverclick="btnRemoteUpload_Click">
+					<button id="btnRemoteUpload" validationgroup="Remote" runat="server" onclick="page.buildTheCookies();" class="btn btn-primary " onserverclick="btnRemoteUpload_Click">
 						<i class="glyphicon glyphicon-open"></i>
 						Upload
 					</button>

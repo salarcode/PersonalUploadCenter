@@ -48,6 +48,8 @@ namespace UploadCenter
 					fileName = newName;
 				}
 
+				var referer = txtReferrer.Text.Trim();
+
 				// temporary file name
 				var fileTempAddress = UploadedFileManager.MapToPhysicalPath(fileName + Guid.NewGuid().ToString());
 				long sizeInBytes = 0;
@@ -57,7 +59,7 @@ namespace UploadCenter
 				{
 					using (var file = new FileStream(fileTempAddress, FileMode.Create))
 					{
-						Download(uri, cookies, file);
+						Download(uri, referer, cookies, file);
 						sizeInBytes = file.Length;
 					}
 				}
@@ -126,13 +128,16 @@ namespace UploadCenter
 			}
 		}
 
-		MemoryStream Download(Uri url, IList<RemoteCookie> cookies)
+		MemoryStream Download(Uri url, string referer, IList<RemoteCookie> cookies)
 		{
 			var wr = WebRequest.Create(url);
 			var hwr = wr as HttpWebRequest;
 			if (hwr != null)
 			{
 				hwr.UserAgent = BrowserUserAgent;
+
+				if (!string.IsNullOrWhiteSpace(referer))
+					hwr.Referer = referer;
 
 				if (cookies != null && cookies.Count > 0)
 				{
@@ -167,13 +172,16 @@ namespace UploadCenter
 			}
 		}
 
-		void Download(Uri url, IList<RemoteCookie> cookies, Stream destination)
+		void Download(Uri url, string referer, IList<RemoteCookie> cookies, Stream destination)
 		{
 			var wr = WebRequest.Create(url);
 			var hwr = wr as HttpWebRequest;
 			if (hwr != null)
 			{
 				hwr.UserAgent = BrowserUserAgent;
+
+				if (!string.IsNullOrWhiteSpace(referer))
+					hwr.Referer = referer;
 
 				if (cookies != null && cookies.Count > 0)
 				{
